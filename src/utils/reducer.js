@@ -2,7 +2,7 @@ import { reducerCases } from "./Constants";
 
 export const initialState = {
     token: null,
-    playlists: []
+
 }
 
 const reducer = (state, action) => {
@@ -13,13 +13,7 @@ const reducer = (state, action) => {
                 token: action.token
             }
         }
-        case reducerCases.SET_PLAYSLISTS : {
-            return {
-                ...state,
-                playlists: action.playlists,
-            }
-        }
-        default : 
+
             return state
     }
 };
