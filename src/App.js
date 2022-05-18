@@ -1,35 +1,19 @@
-import { useEffect, useState } from "react";
-import './App.css';
+import React, {useEffect} from 'react';
+import Login from './components/Login';
+import Spotify from './components/Spotify';
+import { reducerCases } from './utils/Constants';
+import { useStateProvider } from "./utils/StateProvider";
 
-function App() {
-  const CLIENT_ID = "1f33e40894594d7c93b098294c00728c"
-  const REDIRECT_URI = "http://localhost:3000"
-  const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
-  const RESPONSE_TYPE = "token"
-
-  const [token, setToken] = useState (" ")
-
-  useEffect(() => {
-    const hash = window.location.hash
-    let token = window.localStorage.getItem(token)
-
-    if (!token && hash) {
-      token = hash.substring(1).split("&").find((elem) => elem.startsWith("access_token")).split("=")[1]
-
-      console.log(token)
-    } 
-  }, [])
-
-
-
+export default function App() {
+  const [{ token }, dispatch]=useStateProvider()
+  useEffect(()=> {
+    const hash = window.location.hash;
+    if(hash) {
+      const token = hash.substring(1).split("&")[0].split("=")[1];
+      dispatch({ type: reducerCases.SET_TOKEN, token });
+    }
+  }, [ token, dispatch ])
   return (
-    <div className="App">
-      <header className="App-header">
-      <h1>DiscCover Music 2.0</h1>
-        <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a>
-      </header>
-    </div>
-  );
+    <div>{token ? <Spotify /> : <Login />}</div>
+  )
 }
-
-export default App;
