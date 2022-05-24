@@ -11,10 +11,10 @@ const reducer = (state, action) => {
             return {
                 ...state, 
                 token: action.token
-            }
+            };
         }
-
-            return state
+        default:
+            return state;
     }
 };
 
