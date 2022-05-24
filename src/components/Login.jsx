@@ -1,5 +1,5 @@
 import React from "react";
-import { button } from "@mui/material/button";
+import Button from "@mui/material/Button";
 
 export default function Login() {
 	const handleClick = () => {

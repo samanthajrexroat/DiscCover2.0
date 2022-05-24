@@ -6,7 +6,7 @@ import { StateProvider } from "./utils/StateProvider";
 import reducer, { initialState } from "./utils/reducer";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
-import { theme } from "./theme";
+import theme from "./theme";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
