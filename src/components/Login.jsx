@@ -28,10 +28,9 @@ export default function Login() {
 			justifyContent: 'center',
 			height: '100%',
 			width: '100%',
-			backgroundColor: '#1db954',
 			gap: '5rem',
 		}}>
-			<img height="150" src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Black.png" alt="spotify" />
+			<img height="150" src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png" alt="spotify" />
 			<Button 
 				sx={{
 					padding: '1rem 5rem',
