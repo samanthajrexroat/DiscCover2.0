@@ -39,12 +39,12 @@ export default function Login() {
 					border: 'none',
 					backgroundColor: 'black',
 					color: '#49f585',
-					fontSize: '1.4rem',
+					fontSize: '1.2rem',
 					cursor: 'pointer'
 				}}
 				variant="contained" 
 				onClick={handleClick}>
-				Connect to Spotify
+				Connect to Spotify and DiscCover
 			</Button>
 		</Container>
 	);
