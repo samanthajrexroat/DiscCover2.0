@@ -3,10 +3,11 @@ import Footer from './Footer';
 import Sidebar from './Sidebar';
 import Body from './Body';
 import Navbar from './Navbar';
+import Container from '@mui/material/Container';
 
 export default function Spotify() {
   return (
-    <div>
+    <Container>
         <div className="spotify_body">
             <Sidebar />
             <div className="body">
@@ -19,7 +20,7 @@ export default function Spotify() {
         <div className="spotify_footer">
             <Footer />
         </div>
-    </div>
+    </Container>
   )
 }
 
