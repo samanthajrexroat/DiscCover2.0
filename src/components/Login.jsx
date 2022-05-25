@@ -1,5 +1,6 @@
 import React from "react";
-import Button from "@mui/material/Button";
+import {Button, Container} from "@mui/material";
+
 
 export default function Login() {
 	const handleClick = () => {
@@ -20,11 +21,30 @@ export default function Login() {
 	};
 
 	return (
-		<div>
-			<img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Black.png" alt="spotify" />
-			<Button variant="contained" onClick={handleClick}>
-				Connect to Spotify
+		<Container sx={{
+			display: 'flex',
+			flexDirection: 'column',
+			alignItems: 'center',
+			justifyContent: 'center',
+			height: '100%',
+			width: '100%',
+			gap: '5rem',
+		}}>
+			<img height="150" src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png" alt="spotify" />
+			<Button 
+				sx={{
+					padding: '1rem 5rem',
+					borderRadius: '5rem',
+					border: 'none',
+					backgroundColor: 'black',
+					color: '#49f585',
+					fontSize: '1.2rem',
+					cursor: 'pointer'
+				}}
+				variant="contained" 
+				onClick={handleClick}>
+				Connect to Spotify and DiscCover
 			</Button>
-		</div>
+		</Container>
 	);
 }
